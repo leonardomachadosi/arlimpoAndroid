@@ -1,25 +1,17 @@
 package br.ufma.lsdi.arlimpo.retrofit;
 
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import br.ufma.lsdi.arlimpo.service.ResourceService;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class RetrofitInicializador {
     private Retrofit retrofit;
 
     public RetrofitInicializador() {
-
-        Gson gson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd hh:mm:ss")
-                .create();
-
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://cidadesinteligentes.lsdi.ufma.br/")
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(JacksonConverterFactory.create())
                 .build();
 
     }
