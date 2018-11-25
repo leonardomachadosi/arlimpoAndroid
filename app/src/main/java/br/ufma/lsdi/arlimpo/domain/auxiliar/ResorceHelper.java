@@ -6,17 +6,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import br.ufma.lsdi.arlimpo.domain.model.Resource;
+import br.ufma.lsdi.arlimpo.domain.model.ResourceData;
 
 @JsonIgnoreProperties
-public class ResourceAuxiliar implements Serializable {
+public class ResorceHelper implements Serializable {
 
-    private List<Resource> resources;
+    List<ResourceData> resources;
 
-    public List<Resource> getResources() {
+    public List<ResourceData> getResources() {
         return resources;
     }
 
-    public void setResources(List<Resource> resources) {
+    public void setResources(List<ResourceData> resources) {
         this.resources = resources;
     }
 }

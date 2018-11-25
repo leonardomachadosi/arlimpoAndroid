@@ -55,6 +55,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.clear();
     }
 
     @Override
@@ -74,7 +77,15 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
                     resourceAuxiliar = response.body();
 
                     if (resourceAuxiliar != null && !resourceAuxiliar.getResources().isEmpty()) {
-                        resourceAuxiliar.getResources().forEach(resource -> plot(resource));
+                        for (Resource resource : resourceAuxiliar.getResources()) {
+                            if (resource.getLat() != null) {
+                                for (String cap : resource.getCapabilities()) {
+                                    if (cap.equals("Balneabilidade")) {
+                                        plot(resource);
+                                    }
+                                }
+                            }
+                        }
                     }
 
                 }
@@ -92,8 +103,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, Google
     }
 
     private void plot(Resource resource) {
-        LatLng sydney = new LatLng(resource.getLat(), resource.getLon());
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(resource.getLon(), resource.getLat());
+        mMap.addMarker(new MarkerOptions().position(sydney).title(resource.getDescription()));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
