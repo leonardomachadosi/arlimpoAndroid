@@ -7,10 +7,11 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ResourceService {
 
-    @GET("catalog/resources")
+    @GET("catalog/resources/search?capability=Balneabilidade")
     Call<ResourceAuxiliar> getResources();
 
     @POST("collector/resources/data/last")

@@ -3,6 +3,8 @@ package br.ufma.lsdi.arlimpo.domain.auxiliar;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 import br.ufma.lsdi.arlimpo.domain.model.Resource;
 
@@ -14,6 +16,32 @@ public class CapabilityDataAuxiliar implements Serializable {
     private Double lat;
     private Double lon;
     private Resource resource;
+
+    public CapabilityDataAuxiliar(Map<String, Object> capability) {
+        this.value = (String) capability.get("value");
+        this.timestamp = (String) capability.get("timestamp");
+        this.lat = (Double) capability.get("lat");
+        this.lon = (Double) capability.get("lon");
+        Map<String, Object> resourceMap = (Map<String, Object>) capability.get("resource");
+
+        Resource resource = new Resource();
+
+        if (resourceMap != null) {
+            for (String key : resourceMap.keySet()) {
+                resource.setUuid((String) resourceMap.get("uuid"));
+                resource.setDescription((String) resourceMap.get("description"));
+                resource.setLat((Double) resourceMap.get("lat"));
+                resource.setLon((Double) resourceMap.get("lon"));
+            }
+        }
+
+        this.resource = resource;
+
+    }
+
+
+    public CapabilityDataAuxiliar() {
+    }
 
     public String getValue() {
         return value;

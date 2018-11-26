@@ -1,4 +1,4 @@
-package br.ufma.lsdi.arlimpo.domain.model;
+package br.ufma.lsdi.arlimpo.domain.helper;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -8,15 +8,15 @@ import java.util.List;
 import br.ufma.lsdi.arlimpo.domain.auxiliar.CapabilityDataAuxiliar;
 
 @JsonIgnoreProperties
-public class Balneabilidade implements Serializable {
+public class Novo implements Serializable {
 
-    private Object Balneabilidade;
+    private List<CapabilityDataAuxiliar> Balneabilidade;
 
-    public Object getBalneabilidade() {
+    public List<CapabilityDataAuxiliar> getBalneabilidade() {
         return Balneabilidade;
     }
 
-    public void setBalneabilidade(Object balneabilidade) {
+    public void setBalneabilidade(List<CapabilityDataAuxiliar> balneabilidade) {
         Balneabilidade = balneabilidade;
     }
 }

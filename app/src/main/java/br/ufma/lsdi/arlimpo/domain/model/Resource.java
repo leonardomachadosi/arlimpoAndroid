@@ -24,6 +24,8 @@ public class Resource implements Serializable {
     private String country;
     private List<String> capabilities;
 
+
+
     public Integer getId() {
         return id;
     }

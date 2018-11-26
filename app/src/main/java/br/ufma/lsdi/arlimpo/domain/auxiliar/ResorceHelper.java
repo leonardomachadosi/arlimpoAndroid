@@ -5,19 +5,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 
+import br.ufma.lsdi.arlimpo.domain.helper.GetDataContextResource;
 import br.ufma.lsdi.arlimpo.domain.model.Resource;
 import br.ufma.lsdi.arlimpo.domain.model.ResourceData;
 
 @JsonIgnoreProperties
 public class ResorceHelper implements Serializable {
 
-    List<ResourceData> resources;
+    List<GetDataContextResource> resources;
 
-    public List<ResourceData> getResources() {
+    public List<GetDataContextResource> getResources() {
         return resources;
     }
 
-    public void setResources(List<ResourceData> resources) {
+    public void setResources(List<GetDataContextResource> resources) {
         this.resources = resources;
     }
 }

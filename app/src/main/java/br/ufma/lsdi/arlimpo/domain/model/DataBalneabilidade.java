@@ -3,12 +3,9 @@ package br.ufma.lsdi.arlimpo.domain.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
-import java.util.List;
-
-import br.ufma.lsdi.arlimpo.domain.auxiliar.CapabilityDataAuxiliar;
 
 @JsonIgnoreProperties
-public class Balneabilidade implements Serializable {
+public class DataBalneabilidade implements Serializable {
 
     private Object Balneabilidade;
 
