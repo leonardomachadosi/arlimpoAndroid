@@ -18,7 +18,12 @@ public class CapabilityDataAuxiliar implements Serializable {
     private Resource resource;
 
     public CapabilityDataAuxiliar(Map<String, Object> capability) {
-        this.value = (String) capability.get("value");
+        try {
+
+            this.value = (String) capability.get("value");
+        } catch (Exception e) {
+            this.value = String.valueOf((Double) capability.get("value"));
+        }
         this.timestamp = (String) capability.get("timestamp");
         this.lat = (Double) capability.get("lat");
         this.lon = (Double) capability.get("lon");

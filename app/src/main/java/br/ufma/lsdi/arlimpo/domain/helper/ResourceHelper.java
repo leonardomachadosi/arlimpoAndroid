@@ -1,4 +1,4 @@
-package br.ufma.lsdi.arlimpo.domain.auxiliar;
+package br.ufma.lsdi.arlimpo.domain.helper;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,7 +10,7 @@ import br.ufma.lsdi.arlimpo.domain.model.Resource;
 import br.ufma.lsdi.arlimpo.domain.model.ResourceData;
 
 @JsonIgnoreProperties
-public class ResorceHelper implements Serializable {
+public class ResourceHelper implements Serializable {
 
     List<GetDataContextResource> resources;
 
