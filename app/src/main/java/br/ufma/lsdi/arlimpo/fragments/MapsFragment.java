@@ -166,49 +166,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                         }
                     }
 
-                    try {
-                        getDataSensor();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                }
-
-                @Override
-                public void onFailure(Call<ResourceAuxiliar> call, Throwable t) {
-                    t.printStackTrace();
-                }
-            });
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-    }
-
-    private void getDataSensor() throws Exception {
-        Call<ResourceAuxiliar> call = new RetrofitInicializador().getResources().getResourcesSensor();
-        try {
-            call.enqueue(new Callback<ResourceAuxiliar>() {
-                @Override
-                public void onResponse(Call<ResourceAuxiliar> call, Response<ResourceAuxiliar> response) {
-                    resourceAuxiliar = new ResourceAuxiliar();
-                    resourceAuxiliar = response.body();
-
-                    if (resourceAuxiliar != null && !resourceAuxiliar.getResources().isEmpty()) {
-                        for (Resource re : resourceAuxiliar.getResources()) {
-                            if (re.getLat() != null) {
-                                for (String cap : re.getCapabilities()) {
-                                    if (cap.equals("PM10")) {
-                                        if (!re.getUuid().equals("907850e5-e6ef-4958-9e83-1e461a535355")) {
-                                            uuids.add(re.getUuid());
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
                     if (!uuids.isEmpty()) {
                         catalog = new Catalog();
                         catalog.setCapabilities(capabilities);
@@ -219,7 +176,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                             e.printStackTrace();
                         }
                     }
-
 
                 }
 
@@ -315,16 +271,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
             marker = mMap.addMarker(new MarkerOptions()
                     .position(now)
-                    .title(capabilityDataAuxiliar.getResource().getDescription() +
-                            " (" + capabilityDataAuxiliar.getValue() +
-                            ")"));
+                    .title(capabilityDataAuxiliar.getResource().getDescription()));
         } else {
             now = new LatLng(capabilityDataAuxiliar.getResource().getLat(), capabilityDataAuxiliar.getResource().getLon());
             marker = mMap.addMarker(new MarkerOptions()
                     .position(now)
-                    .title(capabilityDataAuxiliar.getResource().getDescription() +
-                            " (" + capabilityDataAuxiliar.getValue() +
-                            ")"));
+                    .title(capabilityDataAuxiliar.getResource().getDescription()));
         }
         marker.setTag(0);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(now));

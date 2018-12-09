@@ -37,8 +37,32 @@
 
                 </android.support.v7.widget.RecyclerView>
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_adapter_titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:text="Dados Históricos"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_detalhe_chart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="5dp"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:clipToPadding="false"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbarStyle="outsideOverlay">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
 
         </FrameLayout>
     </android.support.v4.widget.NestedScrollView>

@@ -3,15 +3,12 @@ package br.ufma.lsdi.arlimpo.adapter;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.security.Signature;
 
 import br.ufma.lsdi.arlimpo.R;
 import br.ufma.lsdi.arlimpo.domain.auxiliar.CapabilityDataAuxiliar;
@@ -66,8 +63,6 @@ public class DetalheDadosGeraisAdapter extends RecyclerView.Adapter<DetalheDados
         } else {
             holder.status.setTextColor(context.getResources().getColor(R.color.dot_dark_screen1));
         }
-
-
     }
 
     @Override

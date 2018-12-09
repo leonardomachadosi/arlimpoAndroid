@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ResourceService {
 
@@ -21,5 +22,8 @@ public interface ResourceService {
 
     @POST("collector/resources/data")
     Call<ResourceHelper> getAllDataByCapability(@Body Catalog catalog);
+
+    @POST("/collector/resources/{uuid}/data")
+    Call<ResourceHelper> getHistoricalDataByResouceAndCapability(@Path("uuid") String uuid, @Body Catalog catalog);
 
 }

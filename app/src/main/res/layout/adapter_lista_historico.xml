@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_lista_presos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_dados_pessoais_preso_adapter"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardPreventCornerOverlap="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/cardimage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@mipmap/teste" />
+
+            <TextView
+                android:id="@+id/cardtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/cardimage"
+                android:layout_toRightOf="@id/cardimage"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_situacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardtitle"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/cardimage"
+                android:layout_toRightOf="@id/cardimage"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+            <TextView
+                android:id="@+id/tv_foragido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_situacao"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/cardimage"
+                android:layout_toRightOf="@id/cardimage"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <ToggleButton
+                android:id="@+id/tb_algemas"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:clickable="true"
+                android:padding="6dp"
+                android:textOff=""
+                android:textOn=""
+                android:visibility="gone" />
+
+            <View xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="250dp"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/cardimage"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/cardimage"
+                android:layout_toRightOf="@id/cardimage"
+                android:background="#B6B6B6" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
+
