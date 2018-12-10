@@ -16,6 +16,9 @@ public class CapabilityDataAuxiliar implements Serializable {
     private Double lat;
     private Double lon;
     private Resource resource;
+    private String name;
+    private String label;
+    private Long index;
 
     public CapabilityDataAuxiliar(Map<String, Object> capability) {
         try {
@@ -86,5 +89,29 @@ public class CapabilityDataAuxiliar implements Serializable {
 
     public void setResource(Resource resource) {
         this.resource = resource;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public Long getIndex() {
+        return index;
+    }
+
+    public void setIndex(Long index) {
+        this.index = index;
     }
 }

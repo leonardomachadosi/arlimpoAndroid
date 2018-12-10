@@ -10,11 +10,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import br.ufma.lsdi.arlimpo.R;
-import br.ufma.lsdi.arlimpo.fragments.MapsFragment;
+import br.ufma.lsdi.arlimpo.fragments.AjudaFragment;
+import br.ufma.lsdi.arlimpo.fragments.ArMapsFragment;
+import br.ufma.lsdi.arlimpo.fragments.BalneabilidadeMapsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        changeFragment(new MapsFragment());
+        changeFragment(new BalneabilidadeMapsFragment());
 
     }
 
@@ -60,13 +61,13 @@ public class MainActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.nav_bal:
-                changeFragment(new MapsFragment());
+                changeFragment(new BalneabilidadeMapsFragment());
                 break;
             case R.id.nav_qual:
-                changeFragment(new MapsFragment());
+                changeFragment(new ArMapsFragment());
                 break;
             case R.id.nav_ajuda:
-                changeFragment(new MapsFragment());
+                changeFragment(new AjudaFragment());
                 break;
         }
 
